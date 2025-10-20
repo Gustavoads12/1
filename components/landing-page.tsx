@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
-import WistiaPlayer from "./WistiaPlayer";
 import Script from "next/script"
 
 export default function LandingPage() {
@@ -89,9 +88,12 @@ export default function LandingPage() {
     },
   ]
 
-  return (
+return (
     <>
+      <Script src="https://fast.wistia.com/player.js" strategy="afterInteractive" />
+      <Script src="https://fast.wistia.com/embed/wz47cojpk6.js" type="module" strategy="afterInteractive" />
 
+      
       <div className="min-h-screen bg-white font-sans">
         <section className="bg-teal-500 px-4 py-6">
           <div className="max-w-4xl mx-auto">
@@ -104,7 +106,25 @@ export default function LandingPage() {
               </h1>
             </div>
 
-         <WistiaPlayer />
+     <div className="relative w-full bg-white rounded-lg overflow-hidden shadow-lg">
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: `
+                    <style>
+                      wistia-player[media-id='wz47cojpk6']:not(:defined) { 
+                        background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/wz47cojpk6/swatch'); 
+                        display: block; 
+                        filter: blur(5px); 
+                        padding-top: 177.78%; 
+                      }
+                    </style>
+                    <wistia-player media-id="wz47cojpk6" seo="false" aspect="0.5625"></wistia-player>
+                  `,
+                }}
+              />
+            </div>
+          </div>
+        </section>
 
         {/* Header */}
         <header className="bg-gradient-to-r from-purple-600 to-purple-800 text-white py-4 px-4 text-center">
