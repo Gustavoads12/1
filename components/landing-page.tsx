@@ -90,8 +90,6 @@ export default function LandingPage() {
 
   return (
     <>
-      <Script src="https://fast.wistia.com/player.js" strategy="afterInteractive" />
-      <Script src="https://fast.wistia.com/embed/wz47cojpk6.js" type="module" strategy="afterInteractive" />
 
       <div className="min-h-screen bg-white font-sans">
         <section className="bg-teal-500 px-4 py-6">
