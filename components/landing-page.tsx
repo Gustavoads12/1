@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import Script from "next/script"
 
+
 export default function LandingPage() {
   const [currentSlide, setCurrentSlide] = useState(1)
   const [currentKitSlide, setCurrentKitSlide] = useState(2)
@@ -87,24 +88,30 @@ export default function LandingPage() {
       color: "red",
     },
   ]
-
-return (
+  
+export default function WistiaPlayer() {
+  return (
     <>
       <Script src="https://fast.wistia.com/player.js" strategy="afterInteractive" />
-      <Script src="https://fast.wistia.com/embed/wz47cojpk6.js" type="module" strategy="afterInteractive" />
-
-      
-      <div className="min-h-screen bg-white font-sans">
-        <section className="bg-teal-500 px-4 py-6">
-          <div className="max-w-4xl mx-auto">
-            {/* Headline Banner */}
-            <div className="bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg p-4 mb-6 text-center">
-              <h1 className="text-white text-lg md:text-xl font-bold leading-tight">
-                O Método que já ajudou mais de <span className="underline">10.000 crianças</span> com DIFICULDADE e
-                ATRASO a desenvolver a linguagem e a escrita em <span className="underline">menos de um MÊS</span> com
-                diversão e resultados!
-              </h1>
-            </div>
+      <Script src="https://fast.wistia.com/embed/wz47cojpk6.js" strategy="afterInteractive" type="module" />
+      <div
+        dangerouslySetInnerHTML={{
+          __html: `
+            <style>
+              wistia-player[media-id='wz47cojpk6']:not(:defined) {
+                background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/wz47cojpk6/swatch');
+                display: block;
+                filter: blur(5px);
+                padding-top:177.78%;
+              }
+            </style>
+            <wistia-player media-id="wz47cojpk6" seo="false" aspect="0.5625"></wistia-player>
+          `,
+        }}
+      />
+    </>
+  );
+}
 
      <div className="relative w-full bg-white rounded-lg overflow-hidden shadow-lg">
               <div
