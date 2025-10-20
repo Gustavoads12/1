@@ -147,19 +147,17 @@ export default function LandingPage() {
           </div>
         </header>
 
-        {/* CTA Button After Video */}
-        <section className="px-4 py-6 text-center bg-gradient-to-r from-purple-600 to-purple-800">
-          <div className="max-w-sm mx-auto">
-            <a
-              href="https://pay.hotmart.com/I100983611P?off=rcy0ge3m&checkoutMode=10"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 text-lg inline-block animate-pulse"
-            >
-              🌟 Quero Ajudar Meu Filho!
-            </a>
-          </div>
-        </section>
+  {/* CTA Button After Header */}
+<section className="px-4 py-3 text-center">
+  <div className="max-w-sm mx-auto">
+    <a
+      href="#purchase-button"
+      className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full shadow-lg pulse-animation transition-all duration-300 transform hover:scale-105 text-sm inline-block"
+    >
+      🌟 Quero Ajudar Meu Filho!
+    </a>
+  </div>
+</section>
 
         {/* Hero Section */}
         <section className="px-4 py-4 text-center">
